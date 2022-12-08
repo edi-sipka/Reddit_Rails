@@ -1,0 +1,3 @@
+class Community 
+
+end
