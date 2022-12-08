@@ -1,7 +1,7 @@
 <div class="row">
  <div class="col-sm-6">
 
-  <%= form_for @post do |form| %>
+  <%= form_for [@community, @post] do |form| %>
   <div class="form-group">
   <%= label_tag :title %>
   <%= form.text_field :title, class: "form-control" %>

@@ -25,7 +25,12 @@
 </div>
 <div class="row">
  <div class="col-8">
-  Left col (wide)
+ <% @posts.each do |post| %>
+ <div class="card p-3">
+ <h4><%= link_to post.title, community_post_path(post.community_id, post) %></h4>
+ <p><%= truncate post.body, length: 150 %></p>
+ </div>
+<% end %>
   </div>
   <div class="col-4">
     <p class="h5 mb-4">Up and coming Communities</p>
