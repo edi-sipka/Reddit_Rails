@@ -33,7 +33,7 @@
    <div class="card">
         <ul class="list-group list-group-flush">
          <% @communities.each do |community| %>
-          <li class="list-group-item"><%= community.name %></li>
+          <li class="list-group-item"><%= link_to community.name, community_path(community) %></li>
          <% end %>
     </ul>
     </div>

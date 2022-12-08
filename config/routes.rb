@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root to: "public#index"
   
   resources :communities
+  resources :posts
 end
