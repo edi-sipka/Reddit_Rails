@@ -1,0 +1,12 @@
+
+<% if @communities.size > 0 %>
+<% @communities.each do |community| %>
+<div class="card">
+<h3><%= link_to community.name, community %></h3>
+<%= community.bio %>
+</div>
+<% end %>
+
+<% else %>
+<p> There are no communities. </p>
+<% end %>
