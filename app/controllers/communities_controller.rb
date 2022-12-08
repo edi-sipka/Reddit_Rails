@@ -1,19 +1,18 @@
 class CommunitiesController < ApplicationController
-  before_action :authenticate_account!, except: [ :index, :show]
+  before_action :authenticate_account!, except: %i[index show]
   before_action :set_community, only: [:show]
-  
+
   def index
     @communities = Community.all
   end
 
-  def show
-  end
+  def show; end
 
-  def new 
+  def new
     @community = Community.new
   end
 
-  def create 
+  def create
     @community = Community.new community_values
     @community.account_id = current_account.id
     if @community.save
@@ -32,5 +31,4 @@ class CommunitiesController < ApplicationController
   def community_values
     params.require(:community).permit(:name, :url, :rules)
   end
-
 end
