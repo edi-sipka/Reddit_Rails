@@ -10,7 +10,7 @@
   </a>
 
   <ul class="dropdown-menu">
-  <%= button_to "Profile", "", class: "dropdown-item" %>
+  <%= link_to "Profile", profile_path(current_account.username), class: "dropdown-item" %>
           <%= link_to "Settings", edit_account_registration_path, class: "dropdown-item" %>
            <%= button_to "Sign Out", destroy_account_session_path, :method => :delete , class: "dropdown-item" %>
   </ul>
