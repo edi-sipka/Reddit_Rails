@@ -1,9 +1,22 @@
 <div class="container">
  <div class="row">
-  <div class="col-12 pt-3 border-bottom pb-3 mb-4">
+  <div class="col-12 pb-3 pt-3">
    <div class="float-end">
    <% if account_signed_in? %>
-     <%= button_to "Sign Out", destroy_account_session_path, :method => :delete , class: "btn btn-outline-primary" %>
+
+   <div class="dropdown">
+  <a class="btn btn-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <%= current_account.full_name %>
+  </a>
+
+  <ul class="dropdown-menu">
+  <%= button_to "Profile", "", class: "dropdown-item" %>
+          <%= link_to "Settings", edit_account_registration_path, class: "dropdown-item" %>
+           <%= button_to "Sign Out", destroy_account_session_path, :method => :delete , class: "dropdown-item" %>
+  </ul>
+</div>
+
+
   <% else %>
     <%= link_to "Log In", new_account_session_path, class: "btn btn-outline-primary" %>
     <%= link_to "Sign Up", new_account_registration_path, class: "btn btn-primary" %>
