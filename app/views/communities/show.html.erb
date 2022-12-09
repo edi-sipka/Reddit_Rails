@@ -3,11 +3,14 @@
  <h3> <%= @community.name %></h3>
  </div>
  <div class="col-sm-4">
-<%= link_to "Create New Post", new_community_post_path(@community), class: "btn btn-primary float-end" if @is_subscribed %>
+  <% if @is_subscribed %>
+   <%= link_to "Create New Post", new_community_post_path(@community),     
+  class: "btn btn-primary float-end" %>
+  <% else %>
+   <<%= render partial: "communities/subscribe" %>>
+  <% end %>
+ </div>
 </div>
-</div>
-
-
 <div class="row">
  <div class="col-8 sm-8">
 <%= render partial: "posts/list", locals: { posts: @posts} %>
