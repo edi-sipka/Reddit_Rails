@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   get "u/:username" => "public#profile", as: :profile
 
   root to: "public#index"
+
+  resources :subscriptions
   
   resources :communities do
   resources :posts
   end
-  
-  resources :subscriptions
+
 end
