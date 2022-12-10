@@ -87,4 +87,5 @@ production:
   <<: *default
   database: reddit_production
   username: reddit
+  adapter: postgresql
   password: <%= ENV["REDDIT_DATABASE_PASSWORD"] %>

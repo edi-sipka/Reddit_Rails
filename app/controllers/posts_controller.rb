@@ -7,7 +7,9 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def show; end
+  def show
+    @comment = Comment.new
+   end
 
   def new
     @community = Community.find(params[:community_id])
@@ -30,7 +32,7 @@ class PostsController < ApplicationController
   private
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.includes(:comments).find(params[:id])
   end
 
   def auth_subscriber
