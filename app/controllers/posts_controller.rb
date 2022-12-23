@@ -2,11 +2,18 @@ class PostsController < ApplicationController
   before_action :authenticate_account!, except: %i[index show]
   before_action :set_post, only: [:show]
 
+  before_action :auth_subscriber, only: [:new]
+
+
   def index
     @posts = Post.all
   end
 
-  def show; end
+
+  def show
+    @comment = Comment.new
+  end
+
 
   def new
     @community = Community.find(params[:community_id])
@@ -29,7 +36,18 @@ class PostsController < ApplicationController
   private
 
   def set_post
+
+    @post = Post.includes(:comments).find(params[:id])
+  end
+
+  def auth_subscriber
+    unless Subscription.where(community_id:
+     params[:community_id], account_id: current_account.id).any?
+      redirect_to root_path, flash: { danger: 'You can not see this page' }
+    end
+
     @post = Post.find(params[:id])
+
   end
 
   def post_values

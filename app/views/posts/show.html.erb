@@ -1,2 +1,17 @@
 <%= @post.title %>
+
 <%= simple_format @post.body %>
+
+<div id="post-comments">
+<%= render partial: "posts/comments", locals: { comments: @post.comments} %>
+</div>
+
+<h5> Leave a comment </h5>
+<%= form_for @comment, remote: true do |f| %>
+ <%= f.hidden_field :post_id, value: @post.id %>
+ <%= f.text_area :message, placeholder: "Place your comment", class:"form-control" %>
+ <%= f.submit "Submit comment", class: "btn btn-success mt-3" %>
+  <% end %>
+
+<%= simple_format @post.body %>
+

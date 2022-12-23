@@ -1,0 +1,6 @@
+<%= comments.each do |comment| %>
+  <div class="comment">
+ <%= link_to comment.account.full_name, profile_path(comment.account.username) %>
+ <%= simple_format comment.message %>
+ </div>
+<% end %>
