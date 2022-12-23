@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_12_23_103930) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_23_103930) do
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
   end
 
+
   create_table "comments", force: :cascade do |t|
     t.text "message"
     t.bigint "account_id"
@@ -39,6 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_23_103930) do
     t.index ["account_id"], name: "index_comments_on_account_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
+
 
   create_table "communities", force: :cascade do |t|
     t.bigint "account_id"
@@ -74,6 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_23_103930) do
     t.index ["account_id"], name: "index_subscriptions_on_account_id"
     t.index ["community_id"], name: "index_subscriptions_on_community_id"
   end
+
 
   create_table "votes", force: :cascade do |t|
     t.bigint "account_id"

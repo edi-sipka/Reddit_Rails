@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 require 'test_helper'
-=======
-require "test_helper"
->>>>>>> development
+
 
 class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase
   # test "connects with cookies" do
