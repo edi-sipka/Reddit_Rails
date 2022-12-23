@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
- <div class="card p-3">
+ <div class="card p-3 mb-3">
  <h4 class="mb-3"><%= link_to post.title, community_post_path(post.community_id, post) %></h4>
  <small><%= link_to post.community.name, community_path(post.community) %> 
  Posted by <%= link_to post.account.full_name, profile_path(post.account.username) %> 

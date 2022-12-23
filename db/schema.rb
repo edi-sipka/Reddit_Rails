@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_10_153427) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_23_103930) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -73,6 +73,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_153427) do
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_subscriptions_on_account_id"
     t.index ["community_id"], name: "index_subscriptions_on_community_id"
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.bigint "account_id"
+    t.bigint "post_id"
+    t.boolean "upvote"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_votes_on_account_id"
+    t.index ["post_id"], name: "index_votes_on_post_id"
   end
 
 end
