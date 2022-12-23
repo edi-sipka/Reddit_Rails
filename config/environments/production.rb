@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 # frozen_string_literal: true
 
 require 'active_support/core_ext/integer/time'
+=======
+require "active_support/core_ext/integer/time"
+>>>>>>> development
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -24,7 +28,11 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
+<<<<<<< HEAD
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+=======
+  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
+>>>>>>> development
 
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
@@ -55,14 +63,22 @@ Rails.application.configure do
   config.log_level = :info
 
   # Prepend all log lines with the following tags.
+<<<<<<< HEAD
   config.log_tags = [:request_id]
+=======
+  config.log_tags = [ :request_id ]
+>>>>>>> development
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
+<<<<<<< HEAD
   # config.active_job.queue_name_prefix = "recipe_app_production"
+=======
+  # config.active_job.queue_name_prefix = "reddit_production"
+>>>>>>> development
 
   config.action_mailer.perform_caching = false
 
@@ -84,12 +100,21 @@ Rails.application.configure do
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
 
+<<<<<<< HEAD
   if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new($stdout)
+=======
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    logger           = ActiveSupport::Logger.new(STDOUT)
+>>>>>>> development
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> development
