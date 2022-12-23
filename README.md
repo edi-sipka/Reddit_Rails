@@ -102,8 +102,9 @@ rspec
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Add likes on post]**
-- [ ] **[Add comments on post]**
+- [ ] **[Add votes on post]**
+- [ ] **[Deploy app on Heroku]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

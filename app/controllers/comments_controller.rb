@@ -2,12 +2,10 @@ class CommentsController < ApplicationContoller
   def new
     @comments = Comment.new
   end
-  
+
   def create
     @comment = Comment.new comment_params
-    @comment.account_id = current_account.id 
-
-    
+    @comment.account_id = current_account.id
   end
 
   def comment_params

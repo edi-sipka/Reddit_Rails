@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
-   end
+  end
 
   def new
     @community = Community.find(params[:community_id])

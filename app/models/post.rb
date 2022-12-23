@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   validates_presence_of :title, :body, :account_id, :community_id
   has_many :comments
 
-  def score 
-   0
+  def score
+    0
   end
 end
